@@ -1,0 +1,64 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.sonic-running {
+  position: absolute;
+  left: 0;
+  bottom: 25px;
+}
+
+/* Balão de mensagem */
+.cs-message__content-wrapper {
+  background-color: #ffd700;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Texto de dentro do balão de mensagem */
+.cs-message__html-content {
+  text-align: start;
+  color: #0f52ba;
+}
+
+/* Borda arredondada do topo */
+.cs-main-container {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: none;
+}
+
+/* Espaçamento entre o botão e o input */
+.cs-message-input__content-editor-wrapper {
+  margin: 0 1rem;
+}
+
+/* Fundo do chat */
+.scrollbar-container {
+  background-color: #1c1e9c;
+}
+
+/* Container do input */
+.cs-chat-container .cs-message-input {
+  background-color: #1c1e9c;
+  border: none;
+}
+
+/* Botão de envio */
+.cs-button {
+  background-color: #ffd700;
+  color: #1c1e9c;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.cs-message-input__tools:last-child {
+  margin-right: 1rem;
+}
