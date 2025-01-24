@@ -1,14 +1,53 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
   text-align: center;
+}
+
+.title {
+  width: 25rem;
+}
+
+.chat {
+  width: 30rem;
+  height: 40rem;
+  margin: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .chat {
+    width: 25rem;
+    height: 30rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .chat {
+    width: 44rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .chat {
+    width: 60rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .chat {
+    width: 85rem;
+  }
 }
 
 .sonic-running {
   position: absolute;
   left: 0;
   bottom: 25px;
+  width: 50px;
 }
 
 /* Balão de mensagem */
