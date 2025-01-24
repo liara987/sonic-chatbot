@@ -10,7 +10,7 @@ Essa aplicação é um chatbot desenvolvido em **React** com **TypeScript**, int
 ## 📹 Vídeo no YouTube  
 Confira o processo de criação e como o Chatbot Sonic funciona no meu canal do YouTube!  
 
-[![Assista ao vídeo](https://github.com/user-attachments/assets/1462e319-258e-46ac-889f-13d44e0042cb)]([link-do-seu-video-no-youtube](https://youtu.be/7H2oTYXkAt8))
+[![Assista ao vídeo](https://github.com/user-attachments/assets/1462e319-258e-46ac-889f-13d44e0042cb)](https://youtu.be/7H2oTYXkAt8)
 
 ---
 
