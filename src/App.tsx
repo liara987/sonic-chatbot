@@ -111,6 +111,7 @@ function App() {
           },
         ]);
         setIsTyping(false);
+        setItFail(false);
       })
       .catch((error) => {
         console.error(
