@@ -9,6 +9,9 @@ import {
 import axios from "axios";
 import { useState } from "react";
 import "./App.css";
+
+import SonicIndisponivelImg from "./assets/sonic-indisponivel.png";
+import SonicNoImg from "./assets/sonic-no.gif";
 import SonicRunningImg from "./assets/sonic-running.gif";
 import TitleImg from "./assets/title.png";
 
@@ -28,6 +31,7 @@ const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
 function App() {
   const [isTyping, setIsTyping] = useState<boolean>(false);
+  const [itFail, setItFail] = useState<boolean>(false);
 
   const [messagesList, setMessagesList] = useState<MessageModelType[]>([
     {
@@ -93,20 +97,29 @@ function App() {
       },
       responseType: "json",
       data: JSON.stringify(dataRequest),
-    }).then((response) => {
-      const chatgptResponse = response.data.choices[0].message.content;
+    })
+      .then((response) => {
+        const chatgptResponse = response.data.choices[0].message.content;
 
-      setMessagesList([
-        ...messages,
-        {
-          message: chatgptResponse,
-          sender: "ChatGPT",
-          direction: "incoming",
-          position: "first",
-        },
-      ]);
-      setIsTyping(false);
-    });
+        setMessagesList([
+          ...messages,
+          {
+            message: chatgptResponse,
+            sender: "ChatGPT",
+            direction: "incoming",
+            position: "first",
+          },
+        ]);
+        setIsTyping(false);
+      })
+      .catch((error) => {
+        console.error(
+          "Erro ao tentar se conectar com a API do ChatGPT: ",
+          error
+        );
+        setItFail(true);
+        setIsTyping(false);
+      });
   }
 
   return (
@@ -124,9 +137,22 @@ function App() {
                   ) : null
                 }
               >
-                {}
-                {isTyping ? (
+                {itFail ? (
+                  <MessageList.Content className="not-available">
+                    <img
+                      src={SonicNoImg}
+                      width={"100%"}
+                      alt="Sonic fazendo sinal de não"
+                    />
+                    <img
+                      src={SonicIndisponivelImg}
+                      width={"100%"}
+                      alt="O sonic esta indisponivel no momento"
+                    />
+                  </MessageList.Content>
+                ) : isTyping ? (
                   <MessageList.Content>
+                    {itFail}
                     <img
                       className="sonic-running"
                       src={SonicRunningImg}

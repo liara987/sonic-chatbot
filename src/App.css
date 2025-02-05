@@ -16,6 +16,15 @@
   align-items: center;
 }
 
+.not-available {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+}
+
 .sonic-running {
   position: absolute;
   left: 0;
